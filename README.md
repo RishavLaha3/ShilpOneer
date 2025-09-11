@@ -126,7 +126,7 @@ OpenAI (optional):
 
 ## License
 
-This project is provided as-is for educational/demo purposes. See LICENSE if present or add one as needed.
+This project is provided as-is for educational/demo purposes.
 =======
  A MERN stack web application for rural economic growth. Marketplace for handmade crafts (sal leaf plates, broomsticks, wooden boxes, etc.) Product CRUD &amp;amp; image uploads Cart &amp;amp; secure checkout Connects artisans with buyers, promoting culture, sustainability &amp;amp; self-reliance.
 
