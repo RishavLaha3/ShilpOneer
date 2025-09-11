@@ -1,5 +1,4 @@
 # ShilpOneer
-<<<<<<< HEAD
 
 A MERN application that connects rural artisans (sal-leaf plates, broomsticks, wooden boxes, handicrafts, etc.) directly with buyers — promoting culture, sustainability, and self‑reliance.
 
