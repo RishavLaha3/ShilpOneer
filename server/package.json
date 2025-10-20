@@ -8,7 +8,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Pritam Garai",
+  "author": "Rishav Laha",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.0",
@@ -19,7 +19,7 @@
     "mongoose": "^8.15.1",
     "nodemon": "^3.1.10",
     "uuid": "^11.1.0"
-  }
+  },
   {
   "name": "Shilponeer",
   "version": "1.0.0",
@@ -29,7 +29,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Rishav Laha",
   "license": "ISC"
 }
 }
