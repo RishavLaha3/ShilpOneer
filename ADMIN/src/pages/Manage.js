@@ -12,7 +12,8 @@ function ProductManager() {
   // Fetch all products
   const getProducts = async () => {
     try {
-      const resp = await fetch("http://localhost:2000/product/sel");
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:2000";
+      const resp = await fetch(`${apiUrl}/product/sel`);
       const data = await resp.json();
       setProducts(data);
     } catch (err) {
@@ -39,7 +40,8 @@ function ProductManager() {
     formData.append("pimage", pimage);
 
     try {
-      const res = await fetch("http://localhost:2000/product/add", {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:2000";
+      const res = await fetch(`${apiUrl}/product/add`, {
         method: "POST",
         body: formData,
       });
@@ -68,7 +70,8 @@ function ProductManager() {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      const res = await fetch(`http://localhost:2000/product/del/${id}`, {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:2000";
+      const res = await fetch(`${apiUrl}/product/del/${id}`, {
         method: "DELETE",
       });
       const data = await res.json();
@@ -203,7 +206,7 @@ function ProductManager() {
                             <td className="text-success font-weight-bold">₹{p.pprice}</td>
                             <td>
                               <img
-                                src={`http://localhost:2000/product_img/${p.pimage}`}
+                                src={`${process.env.REACT_APP_API_URL || "http://localhost:2000"}/product_img/${p.pimage}`}
                                 alt={p.pname}
                                 className="img-thumbnail"
                                 style={{ width: "80px", height: "80px", objectFit: "cover" }}

@@ -11,7 +11,8 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:2000/login", {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:2000";
+      const response = await fetch(`${apiUrl}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
