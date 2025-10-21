@@ -19,8 +19,8 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://pritamg7:pritam1234@cluster0.r2md9.mongodb.net/ecodevjhargram?retryWrites=true&w=majority&appName=Cluster0");
 
 const db = mongoose.connection;
-db.on("error", (error) => console.error("❌ MongoDB connection error:", error));
-db.once("open", () => console.log("✅ MongoDB connected successfully"));
+db.on("error", (error) => console.error("MongoDB connection error:", error));
+db.once("open", () => console.log("MongoDB connected successfully"));
 
 // Routes
 app.get("/", (req, res) => {
@@ -43,5 +43,5 @@ app.post("/login", (req, res) => {
 // Start the server
 const PORT = 2000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
