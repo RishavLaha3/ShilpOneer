@@ -8,7 +8,8 @@ export default function Home({ handleAddToCart }) {
 
   // Fetch products from backend API
   useEffect(() => {
-    fetch("http://localhost:2000/product/sel")
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:2000";
+    fetch(`${apiUrl}/product/sel`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Error fetching products:", err));
@@ -67,7 +68,7 @@ export default function Home({ handleAddToCart }) {
               About Us
             </Link>
             <a
-              href="http://localhost:3001/"
+              href={process.env.REACT_APP_ADMIN_URL || "http://localhost:3001/"}
               className="btn btn-outline-light ml-3"
               style={{ marginLeft: "12px", whiteSpace: "nowrap" }}
             >
@@ -132,7 +133,7 @@ export default function Home({ handleAddToCart }) {
               <div className="card h-100 border-0 shadow-sm rounded-lg hover-shadow">
                 {/* Product Image */}
                 <img
-                  src={`http://localhost:2000/product_img/${product.pimage}`}
+                  src={`${process.env.REACT_APP_API_URL || "http://localhost:2000"}/product_img/${product.pimage}`}
                   className="card-img-top"
                   alt={product.pname}
                   style={{

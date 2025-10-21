@@ -8,7 +8,7 @@
     <meta
       name="description"
       content="Web site created using create-react-app"
-    /
+    />
 
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     
@@ -260,7 +260,8 @@
             try {
               let product = null;
               try {
-                const pRes = await fetch(`http://localhost:2000/product/sel`);
+                const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:2000' : (window.REACT_APP_API_URL || 'https://your-backend-url.herokuapp.com');
+                const pRes = await fetch(`${apiUrl}/product/sel`);
                 const all = await pRes.json();
                 if (Array.isArray(all)) {
                   const exact = all.find(p => typeof p.pname === 'string' && p.pname.trim().toLowerCase() === nameQuery);
