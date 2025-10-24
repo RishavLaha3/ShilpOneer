@@ -15,7 +15,7 @@ function App() {
     setCartItems((prevItems) => [...prevItems, product]);
   };
 
-  // ✅ Remove only ONE occurrence of a product from the cart
+  // Remove only ONE occurrence of a product from the cart
   const handleRemoveFromCart = (product) => {
     setCartItems((prevItems) => {
       const indexToRemove = prevItems.findIndex(
@@ -28,7 +28,7 @@ function App() {
     });
   };
 
-  // ✅ Listen for chatbot add-to-cart events
+  //  Listen for chatbot add-to-cart events
   useEffect(() => {
     function onChatbotAddToCart(e) {
       const product = e && e.detail;

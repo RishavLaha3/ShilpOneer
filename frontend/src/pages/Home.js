@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Home({ handleAddToCart }) {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
-  const [toastMessage, setToastMessage] = useState(""); // ✅ Toast message state
+  const [toastMessage, setToastMessage] = useState(""); // Toast message state
 
   // Fetch products from backend API
   useEffect(() => {

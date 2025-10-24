@@ -1,6 +1,6 @@
 const Cart = require("../models/Cart");
 
-// ✅ Add to cart (increments if already exists)
+// Add to cart (increments if already exists)
 exports.addToCart = async (req, res) => {
   try {
     const { userId, productId, qty = 1 } = req.body;
@@ -29,7 +29,7 @@ exports.addToCart = async (req, res) => {
   }
 };
 
-// ✅ Remove ONE instance (decrement, delete if zero)
+// Remove ONE instance (decrement, delete if zero)
 exports.removeOneFromCart = async (req, res) => {
   try {
     const { userId, productId } = req.body;
@@ -52,7 +52,7 @@ exports.removeOneFromCart = async (req, res) => {
   }
 };
 
-// ✅ Remove ALL instances (optional “trash bin” button)
+// Remove ALL instances (optional “trash bin” button)
 exports.removeAllOfProduct = async (req, res) => {
   try {
     const { userId, productId } = req.body;

@@ -39,14 +39,14 @@ async addproduct(req, res) {
         return res.status(400).json({ msg: "Only JPG, PNG, or WEBP images are allowed" });
       }
 
-      // ✅ 4. Use original file name (as provided by user)
+      // 4. Use original file name (as provided by user)
       const fileName = objimg.name;
       const uploadPath = path.join(uploadDir, fileName);
 
       // 5. Move file
       objimg.mv(uploadPath, async (err) => {
         if (err) {
-          console.error("❌ File Upload Error:", err);
+          console.error("File Upload Error:", err);
           return res.status(500).json({ msg: "File upload failed" });
         }
 
@@ -55,16 +55,16 @@ async addproduct(req, res) {
           pname,
           pprice,
           pdetails,
-          pimage: fileName // ✅ original file name saved
+          pimage: fileName // original file name saved
         };
 
         await productmod.create(insobj);
-        console.log("✅ Product Added:", insobj);
+        console.log("Product Added:", insobj);
         res.json({ msg: "Product added successfully" });
       });
 
     } catch (error) {
-      console.error("❌ Add Product Error:", error);
+      console.error("Add Product Error:", error);
       res.status(500).json({ msg: "Internal server error" });
     }
   },
@@ -75,7 +75,7 @@ async addproduct(req, res) {
             const data = await productmod.find();
             res.json(data);
         } catch (error) {
-            console.error("❌ Select Product Error:", error);
+            console.error("Select Product Error:", error);
             res.status(500).json({ msg: "Internal server error" });
         }
     },
@@ -96,7 +96,7 @@ async addproduct(req, res) {
 
             res.json({ msg: "Product deleted successfully" });
         } catch (error) {
-            console.error("❌ Delete Product Error:", error);
+            console.error("Delete Product Error:", error);
             res.status(500).json({ msg: "Internal server error" });
         }
     },
