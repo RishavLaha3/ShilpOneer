@@ -17,7 +17,7 @@ function ProductManager() {
       const data = await resp.json();
       setProducts(data);
     } catch (err) {
-      console.error("❌ Error fetching products:", err);
+      console.error("Error fetching products:", err);
     }
   };
 
@@ -49,16 +49,16 @@ function ProductManager() {
       const result = await res.json();
 
       if (res.ok) {
-        alert("✅ Product added successfully!");
+        alert("Product added successfully!");
         resetForm();
         setPimage(null);
         setShowForm(false);
         getProducts();
       } else {
-        alert(`❌ Failed to add product: ${result.msg}`);
+        alert(`Failed to add product: ${result.msg}`);
       }
     } catch (err) {
-      console.error("❌ Error submitting form:", err);
+      console.error("Error submitting form:", err);
       alert("An error occurred while submitting the form.");
     }
 
@@ -75,10 +75,10 @@ function ProductManager() {
         method: "DELETE",
       });
       const data = await res.json();
-      console.log("🗑️ Deleted:", data);
+      console.log("Deleted:", data);
       getProducts();
     } catch (err) {
-      console.error("❌ Error deleting product:", err);
+      console.error("Error deleting product:", err);
     }
   };
 
@@ -94,13 +94,13 @@ function ProductManager() {
               {/* Page Heading + Toggle */}
               <div className="d-flex justify-content-between align-items-center mb-4">
                 <h1 className="h3 text-gray-800">
-                  {showForm ? "➕ Add Product" : "📦 Product List"}
+                  {showForm ? "Add Product" : "Product List"}
                 </h1>
                 <button
                   className={`btn ${showForm ? "btn-secondary" : "btn-success"}`}
                   onClick={() => setShowForm(!showForm)}
                 >
-                  {showForm ? "⬅ Back to List" : "➕ Add Product"}
+                  {showForm ? "Back to List" : "Add Product"}
                 </button>
               </div>
 

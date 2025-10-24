@@ -24,7 +24,7 @@ ChartJS.register(
 );
 
 function Dashboard() {
-  // 🔹 Static product data you provided
+  // Static product data you provided
   const products = [
     { pname: "Sal Leaf Plate", pprice: 50, sales: 60, stock: 140 },
     { pname: "Broomstick", pprice: 120, sales: 80, stock: 120 },
@@ -41,7 +41,7 @@ function Dashboard() {
   const totalStock = products.reduce((sum, p) => sum + p.stock, 0);
   const totalSaleQuantity = products.reduce((sum, p) => sum + p.sales, 0);
 
-  // ✅ Pie Chart (Sales Quantity)
+  // Pie Chart (Sales Quantity)
   const pieData = {
     labels: products.map((p) => p.pname),
     datasets: [
@@ -53,7 +53,7 @@ function Dashboard() {
     ],
   };
 
-  // ✅ Bar Chart (Sales Amount Distribution)
+  // Bar Chart (Sales Amount Distribution)
   const barData = {
     labels: products.map((p) => p.pname),
     datasets: [
@@ -73,7 +73,7 @@ function Dashboard() {
           <div id="content">
             <Top />
             <div className="container-fluid">
-              <h1 className="h3 mb-4 text-gray-800">📊 Dashboard</h1>
+              <h1 className="h3 mb-4 text-gray-800">Dashboard</h1>
 
               {/* Cards Section */}
               <div className="row mb-4">
@@ -107,7 +107,7 @@ function Dashboard() {
               <div className="row">
                 <div className="col-md-6 mb-4">
                   <div className="card shadow-sm p-3">
-                    <h5 className="text-center">📦 Sales Quantity</h5>
+                    <h5 className="text-center">Sales Quantity</h5>
                     <div style={{ maxWidth: "300px", margin: "0 auto" }}>
                       <Pie data={pieData} />
                     </div>
@@ -115,7 +115,7 @@ function Dashboard() {
                 </div>
                 <div className="col-md-6 mb-4">
                   <div className="card shadow-sm p-3">
-                    <h5 className="text-center">💰 Sales Amount Distribution</h5>
+                    <h5 className="text-center">Sales Amount Distribution</h5>
                     <Bar data={barData} />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ function Dashboard() {
 
               {/* Sales Report Table */}
               <div className="card shadow-sm p-3">
-                <h5>📋 Sales Report</h5>
+                <h5> Sales Report</h5>
                 <table className="table table-bordered table-striped mt-3">
                   <thead className="thead-dark">
                     <tr>
@@ -144,7 +144,7 @@ function Dashboard() {
                         <td className="text-success">{p.sales * p.pprice}</td>
                       </tr>
                     ))}
-                    {/* ✅ Grand Total Row */}
+                    {/* Grand Total Row */}
                     <tr className="font-weight-bold bg-light">
                       <td colSpan="2">TOTAL</td>
                       <td>{totalSaleQuantity}</td>

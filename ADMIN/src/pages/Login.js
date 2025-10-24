@@ -36,9 +36,9 @@ export default function LoginPage() {
   return (
     <div className="container d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
       <div className="col-md-5">
-        {/* 👋 Welcome line */}
+        {/* Welcome line */}
         <h2 className="text-center mb-4">
-          Hello Admin! <span role="img" aria-label="wave">👋</span>
+          Hello Admin! <span role="img" aria-label="wave"></span>
         </h2>
 
         <div className="card shadow-lg">
